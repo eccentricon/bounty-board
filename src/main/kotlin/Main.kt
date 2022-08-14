@@ -13,7 +13,7 @@ fun main() {
     val playerClass = "paladin"
     val quest: String = if (playerLevel == 1) {
         "Meet Mr. Bubbles in the land of soft things."
-    } else if (playerLevel <= 5) {
+    } else if (playerLevel in 2..5) {
         // Check whether diplomacy is an option
         val canTalkToBarbarians = !hasAngeredBarbarians &&
                 (hasBefriendedBarbarians || playerClass == "barbarian")
