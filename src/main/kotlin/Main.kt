@@ -9,10 +9,14 @@ fun main() {
     println(playerLevel)
 
     val hasBefriendedBarbarians = true
+    val hasAngeredBarbarians = false
+    val playerClass = "paladin"
     if (playerLevel == 1) {
         println("Meet Mr. Bubbles in the land of soft things.")
     } else if (playerLevel <= 5) {
-        if (hasBefriendedBarbarians) {
+        // Check whether diplomacy is an option
+        if (!hasAngeredBarbarians &&
+                (hasBefriendedBarbarians || playerClass == "barbarian")) {
             println("Convince the barbarians to call off their invasion.")
         } else {
             println("Save the town from the barbarian invasions.")
