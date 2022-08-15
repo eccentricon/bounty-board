@@ -27,7 +27,7 @@ private fun obtainQuest(
     playerClass: String = "paladin",
     hasBefriendedBarbarians: Boolean = true,
     hasAngeredBarbarians: Boolean = false
-) = when (playerLevel) {
+): String = when (playerLevel) {
     1 -> "Meet Mr. Bubbles in the land of soft things."
     in 2..5 -> {
         // Check whether diplomacy is an option
