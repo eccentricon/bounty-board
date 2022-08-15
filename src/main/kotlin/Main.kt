@@ -11,6 +11,24 @@ fun main() {
     val hasBefriendedBarbarians = true
     val hasAngeredBarbarians = false
     val playerClass = "paladin"
+    val quest: String = obtainQuest(playerLevel, playerClass,
+            hasBefriendedBarbarians, hasAngeredBarbarians)
+    println("The hero approaches the bounty board. It reads:")
+    println(quest)
+
+    println("Time passes...")
+    println("The hero returns from her quest.")
+
+    playerLevel += 1
+    println(playerLevel)
+}
+
+private fun obtainQuest(
+    playerLevel: Int,
+    playerClass: String,
+    hasBefriendedBarbarians: Boolean,
+    hasAngeredBarbarians: Boolean
+): String {
     val quest: String = when (playerLevel) {
         1 -> "Meet Mr. Bubbles in the land of soft things."
         in 2..5 -> {
@@ -28,12 +46,5 @@ fun main() {
         8 -> "Defeat Nogartse, bringer of death and eater of worlds."
         else -> "There are no quests right now."
     }
-    println("The hero approaches the bounty board. It reads:")
-    println(quest)
-
-    println("Time passes...")
-    println("The hero returns from her quest.")
-
-    playerLevel += 1
-    println(playerLevel)
+    return quest
 }
